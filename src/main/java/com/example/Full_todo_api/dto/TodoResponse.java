@@ -1,5 +1,8 @@
 package com.example.Full_todo_api.dto;
 import java.sql.Date;
+import java.time.LocalDateTime;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 import lombok.Data;
 
@@ -10,6 +13,8 @@ public class TodoResponse {
 	String text;
 	String status;
 	Date dueDate;
-	Date createdAt;
-	Date updatedAt;
+	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+	LocalDateTime createdAt;
+	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+	LocalDateTime updatedAt;
 }
