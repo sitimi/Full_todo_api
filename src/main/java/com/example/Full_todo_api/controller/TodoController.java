@@ -7,12 +7,16 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.Full_todo_api.dto.TodoRequest;
 import com.example.Full_todo_api.dto.TodoResponse;
 import com.example.Full_todo_api.entity.Todo;
 import com.example.Full_todo_api.mapper.TodoMapper;
+
 
 
 @RestController
@@ -35,5 +39,13 @@ public class TodoController {
 		});
 		return todoResponseList;
 	}
+	
+	@PostMapping
+	public void postMethodName(@RequestBody TodoRequest todoRequest) {
+		Todo todo = new Todo();
+		BeanUtils.copyProperties(todoRequest, todo);
+		System.out.println(todo);
+	}
+	
 	
 }
