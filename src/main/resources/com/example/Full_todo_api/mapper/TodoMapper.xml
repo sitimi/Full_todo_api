@@ -4,4 +4,8 @@
 	<select id="findAll" resultType="com.example.Full_todo_api.entity.Todo">
 		SELECT * FROM todos ORDER BY id
 	</select>
+	<insert id="insert" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO todos (title,text,status,due_date) 
+        VALUES (#{title},#{text},#{status},#{dueDate})
+    </insert>
 </mapper>

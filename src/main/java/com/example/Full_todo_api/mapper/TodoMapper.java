@@ -9,4 +9,5 @@ import com.example.Full_todo_api.entity.Todo;
 @Mapper
 public interface TodoMapper {
 	List<Todo> findAll();
+	int insert(Todo todo);
 }

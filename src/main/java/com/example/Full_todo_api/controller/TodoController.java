@@ -41,10 +41,10 @@ public class TodoController {
 	}
 	
 	@PostMapping
-	public void postMethodName(@RequestBody TodoRequest todoRequest) {
+	public void doPost(@RequestBody TodoRequest todoRequest) {
 		Todo todo = new Todo();
 		BeanUtils.copyProperties(todoRequest, todo);
-		System.out.println(todo);
+		int ret = todoMapper.insert(todo);
 	}
 	
 	
