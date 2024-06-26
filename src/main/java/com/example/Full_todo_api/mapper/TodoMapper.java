@@ -10,4 +10,5 @@ import com.example.Full_todo_api.entity.Todo;
 public interface TodoMapper {
 	List<Todo> findAll();
 	int insert(Todo todo);
+	void delete(int id);
 }

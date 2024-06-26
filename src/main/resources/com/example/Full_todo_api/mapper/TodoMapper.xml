@@ -8,4 +8,7 @@
         INSERT INTO todos (title,text,status,due_date) 
         VALUES (#{title},#{text},#{status},#{dueDate})
     </insert>
+    <delete id="delete">
+        DELETE FROM todos WHERE id = #{id}
+    </delete>
 </mapper>

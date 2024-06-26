@@ -6,7 +6,9 @@ import java.util.List;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -39,12 +41,18 @@ public class TodoController {
 		});
 		return todoResponseList;
 	}
-	
+
 	@PostMapping
 	public void doPost(@RequestBody TodoRequest todoRequest) {
+//		System.out.println(todoRequest);
 		Todo todo = new Todo();
 		BeanUtils.copyProperties(todoRequest, todo);
 		int ret = todoMapper.insert(todo);
+	}
+	
+	@DeleteMapping("{id}")
+	public void delete(@PathVariable int id) {
+		todoMapper.delete(id);
 	}
 	
 	
