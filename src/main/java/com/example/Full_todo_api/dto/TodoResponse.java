@@ -1,7 +1,7 @@
 package com.example.Full_todo_api.dto;
 import java.time.LocalDateTime;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import lombok.Data;
 
@@ -11,12 +11,10 @@ public class TodoResponse {
 	String title;
 	String text;
 	String status;
-	@JsonFormat(pattern="yyyy/MM/dd HH:mm:ss")
+
 	LocalDateTime dueDate;
-//	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-	@JsonFormat(pattern="yyyy/MM/dd HH:mm:ss")
+	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 	LocalDateTime createdAt;
-//	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-	@JsonFormat(pattern="yyyy/MM/dd HH:mm:ss")
+	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 	LocalDateTime updatedAt;
 }
