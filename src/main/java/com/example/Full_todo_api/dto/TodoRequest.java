@@ -9,5 +9,6 @@ public class TodoRequest {
 	String title;
 	String text;
 	String status;
+	LocalDateTime startDate;
 	LocalDateTime dueDate;
 }

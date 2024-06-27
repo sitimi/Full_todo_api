@@ -5,8 +5,8 @@
 		SELECT * FROM todos ORDER BY id
 	</select>
 	<insert id="insert" useGeneratedKeys="true" keyProperty="id">
-        INSERT INTO todos (title,text,status,due_date) 
-        VALUES (#{title},#{text},#{status},#{dueDate})
+        INSERT INTO todos (title,text,status,start_date,due_date) 
+        VALUES (#{title},#{text},#{status},#{startDate},#{dueDate})
     </insert>
     <delete id="delete">
         DELETE FROM todos WHERE id = #{id}
@@ -16,6 +16,7 @@
     	SET title = #{title},
     		text = #{text},
     		status = #{status},
+    		start_date = #{startDate},
     		due_date = #{dueDate}
     	WHERE id = #{id}
     </update>

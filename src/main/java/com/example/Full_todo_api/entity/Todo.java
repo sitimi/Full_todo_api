@@ -12,6 +12,7 @@ public class Todo {
 	String title;
 	String text;
 	String status;
+	LocalDateTime startDate;
 	LocalDateTime dueDate;
 	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 	LocalDateTime createdAt;
