@@ -11,4 +11,5 @@ public interface TodoMapper {
 	List<Todo> findAll();
 	int insert(Todo todo);
 	void delete(int id);
+	void update(Todo todo);
 }

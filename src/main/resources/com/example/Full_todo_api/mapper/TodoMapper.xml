@@ -11,4 +11,12 @@
     <delete id="delete">
         DELETE FROM todos WHERE id = #{id}
     </delete>
+    <update id="update">
+    	UPDATE todos
+    	SET title = #{title},
+    		text = #{text},
+    		status = #{status},
+    		due_date = #{dueDate}
+    	WHERE id = #{id}
+    </update>
 </mapper>
