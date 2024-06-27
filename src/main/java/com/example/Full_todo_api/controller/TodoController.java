@@ -55,7 +55,6 @@ public class TodoController {
 		Todo todo = new Todo();
 		BeanUtils.copyProperties(todoRequest, todo);
 		todo.setId(id);
-//		System.out.println(todo);
 		todoMapper.update(todo);
 	}
 	
